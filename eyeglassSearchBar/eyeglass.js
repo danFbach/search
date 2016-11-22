@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('#trigger').click(function(){
 		$('.eyeglassContainer').toggleClass('js-searchActive');
-		$('body').removeClass('preload');
+		$('form.preload').removeClass('preload');
 		$('.eyeglassContainer input').focus();
 	});
 });
