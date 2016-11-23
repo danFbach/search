@@ -14,25 +14,40 @@
 	0%		{ width: 30px; opacity: 0; }
 	49%		{ opacity: 0; }
 	50%		{ opacity: 1; width:30px; left: 0; }
-	100%	{ width: 300px; left: -270px; }
+	90%		{ width: 300px; left: calc(50% - 150px); }
+	100%	{ width: 300px; left: calc(50% - 150px); }
 }
 @keyframes inputClose {
-	0%		{ opacity: 1; width:300px; left: -270px; }
+	0%		{ opacity: 1; width:300px; left: calc(50% - 150px); }
+	10%		{ opacity: 1; width:300px; left: calc(50% - 150px); }
 	49%		{ opacity: 1; width: 30px; left: 0; }
 	50%		{ opacity: 0; width: 30px; left: 0; }
 	100%	{ opacity: 0; width: 30px; left: 0; }
 }
+@keyframes span2Open {
+
+	0%		{ top:30px; height: 15px; left: 34px; }
+	50%		{ top: 6px;	height: 25px; left: 16px; }
+	90%		{ top: 6px;	height: 25px; left: calc(50% + 136px); }
+	100%	{ top: 6px;	height: 25px; left: calc(50% + 136px); }
+}
+@keyframes span2Close {
+	0%		{ top: 6px;	height: 25px; left: calc(50% + 136px); }
+	10%		{ top: 6px;	height: 25px; left: calc(50% + 136px); }
+	50%		{ top: 6px;	height: 25px; left: 16px; }
+	100%	{ top:30px; height: 15px; left: 34px; }
+}
 @keyframes span3Open {
-	0%		{ opacity: 0; transform: rotate(-45deg); display: none; }
-	49%		{ opacity: 0; transform: rotate(-45deg); display: block; }
-	50%		{ opacity: 1; transform: rotate(-45deg); display: block; }
-	100%	{ transform: rotate(45deg); display: block; }
+	0%		{ opacity: 0; transform: rotate(-45deg); left: 16px; }
+	90%		{ opacity: 0; transform: rotate(-45deg); left: calc(50% + 136px); }
+	91%		{ opacity: 1; transform: rotate(-45deg); left: calc(50% + 136px); }
+	100%	{ opacity: 1; transform: rotate( 45deg); left: calc(50% + 136px); }
 }
 @keyframes span3Close {
-	0%		{ opacity: 1; transform: rotate(45deg); }
-	50%		{ opacity: 1; transform: rotate(-45deg); }
-	51%		{ opacity: 0; }
-	100%	{ opacity: 0; }
+	0%		{ opacity: 1; transform: rotate( 45deg); left: calc(50% + 136px); }
+	9%		{ opacity: 1; transform: rotate(-45deg); left: calc(50% + 136px); }
+	10%		{ opacity: 0; transform: rotate(-45deg); left: calc(50% + 136px); }
+	100%	{ opacity: 0; transform: rotate(-45deg); }
 }
 
 body{
@@ -45,7 +60,8 @@ body{
 }
 nav{
 	position: fixed;
-	height: 99vh;
+	height: 100vh;
+	top: 0;
 	width: 300px;
 	left: -200px;
 	color: #FFF;
@@ -73,11 +89,12 @@ nav ul{
 	left: -60px;
 }
 nav ul li{
-	height: 60px;
+	margin: 20px auto;
 	list-style: none;
 }
 nav ul li a:link,
 nav ul li a:visited{
+	height: 20px;
 	color: #FFF;
 	text-decoration: none;
 }
@@ -112,6 +129,9 @@ nav #titleBar{
 	z-index: 10;
 	left: calc(50% - 20px);
 }
+#trigger.js-searchActive{
+	left: calc(50% + 120px);
+}
 #trigger:hover{
 	cursor: pointer;
 }
@@ -136,13 +156,13 @@ nav #titleBar{
 	animation-duration: 0.9s;
 }
 .eyeglassContainer input{
-	text-indent: 10px;
-	animation-name: inputClose;
-	animation-duration: 0.9s;
 	transition: box-shadow 0.5s 0.2s;
-	opacity: 0;
-	width: 30px;
+	animation: inputClose 1s;
+	background: #3b8ac6;
 	border-radius: 0px;
+	text-indent: 10px;
+	width: 30px;
+	opacity: 0;
 }
 .eyeglassContainer input:placeholder-shown{
 	color: #E5E5E5;
@@ -154,9 +174,8 @@ nav #titleBar{
 .eyeglassContainer.js-searchActive input{
 	opacity: 1;
 	width: 300px;
-	left: -270px;
-	animation-name: inputOpen;
-	animation-duration: 0.9s;
+	left: calc(50% - 150px);
+	animation: inputOpen 1s;
 }
 .eyeglassContainer span:nth-child(2){
 	position: absolute;
@@ -169,13 +188,13 @@ nav #titleBar{
 	border: none;
 	background: #d5d5d5;
 	transform: rotate(-45deg);
-	transition: all 0.45s linear 0.45s;
+	animation: span2Close 1s;
 }
 .eyeglassContainer.js-searchActive span:nth-child(2) {
-	height: 25px;
 	top: 6px;
-	left: 16px;
-	transition: all 0.45s;
+	height: 25px;
+	animation: span2Open 1s;
+	left: calc(50% + 136px);
 }
 .eyeglassContainer span:nth-child(3){
 	position: absolute;
@@ -189,13 +208,141 @@ nav #titleBar{
 	display: block;
 	background: #d5d5d5;
 	transform: rotate(-45deg);
-	animation: span3Close 0.45s linear;
+	animation: span3Close 1s linear;
 }
 .eyeglassContainer.js-searchActive span:nth-child(3){
 	opacity: 1;
+	left: calc(50% + 136px);
 	transform: rotate(45deg);
-	animation: span3Open 0.45s linear;
+	animation: span3Open 1s linear;
 }
+
+/* Anitmated links */
+
+a.animatedLink:link,
+a.animatedLink:visited{
+	font-family: 'Varela Round';
+	position: absolute;
+	top: 100px;
+	width: 175px;
+	text-align: center;
+	left: calc(50% - 57px);
+	border: 2px solid #333;
+	background: #000;	
+	color: #969696;
+	padding: 20px 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	overflow: hidden;
+	z-index: 0;
+	transition: all 0.4s;
+	text-indent: 0;
+}
+a.animatedLink:hover{
+	color: #FFF;
+}
+a.animatedLink span#words,
+a.animatedLink span#arrow{
+	position: relative;
+	left: 0;
+	transition: all 0.4s;
+}
+a.animatedLink:hover span#words{
+	left: -2px;
+}
+a.animatedLink:hover span#arrow{
+	left: 2px;
+}
+a.animatedLink::before{
+	height: 400px;
+	display: block;
+	position: absolute;
+	background: #181818;
+	width: 0;
+	content: ' ';
+	border:none;
+	left: -50px;
+	top: -100px;
+	border-right: 35px solid #D5d5d5;
+	transform: rotate(-25deg);
+	transition: all 0.5s;
+	z-index: -1;
+}
+a.animatedLink:hover::before{
+	left: 0;
+	width: calc(100% + 50px);
+	transform: rotate(0deg);
+}
+
+
+/*SHADED BOXES*/
+
+.slick-prev{
+	position: absolute;
+	left: 10px;
+	top: 65px;
+	z-index: 1;
+	height: 40px;
+	width: 40px;
+	color: transparent;
+	transform: rotate(-45deg);
+	background: none;
+	border: none;
+	border-left: 3px solid #333;
+	border-top: 3px solid #333;
+}
+.slick-next{
+	position: absolute;
+	right: 10px;
+	top: 65px;
+	z-index: 1;
+	height: 40px;
+	width: 40px;
+	color: transparent;
+	transform: rotate(45deg);
+	background: none;
+	border: none;
+	border-right: 3px solid #333;
+	border-top: 3px solid #333;
+}
+#boxContainer{
+	position: absolute;
+	width: 80%;
+	height: 150px;
+	border:2px solid #000;
+	background: none;
+	top: 200px;
+	left: 10%;
+}
+#boxContainer .shadedBox{
+	width: 150px;
+	height: 150px;
+	float: left;
+	background: #0080ff;
+	text-align: center;
+}
+#boxContainer .shadedBox:nth-child(10n+15),
+#boxContainer .shadedBox:nth-child(10n+7){
+	background: #3399ff;
+}
+#boxContainer .shadedBox:nth-child(10n+14),
+#boxContainer .shadedBox:nth-child(10n+8){
+	background: #66b3ff;
+}
+#boxContainer .shadedBox:nth-child(10n+13),
+#boxContainer .shadedBox:nth-child(10n+9){
+	background: #99ccff;
+}
+#boxContainer .shadedBox:nth-child(10n+12),
+#boxContainer .shadedBox:nth-child(10n+10){
+	background: #cce6ff;
+}
+#boxContainer .shadedBox:nth-child(10n+11){
+	background: #ffffff;
+}
+
+
 .preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
