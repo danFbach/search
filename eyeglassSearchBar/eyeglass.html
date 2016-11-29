@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<head>	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script type="text/javascript" src="jQuery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="eyeglass.js"></script>
 		<script type="text/javascript" src="slick.min.js"></script>
@@ -9,6 +10,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+		<span id="testBar"></span>
 		<nav>
 			<div id="navContainer">
 				<ul>
@@ -21,8 +23,7 @@
 			</div>
 			<div id="titleBar">jump to catergory</div>
 		</nav>
-		<a class="animatedLink" href="#"><span id="words">Test NavBar</span><span id="arrow"> ></span></a>
-		<div id="boxContainer">
+		<div class="boxContainer">
 			<div class="shadedBox"><h2>1</h2></div>
 			<div class="shadedBox"><h2>1</h2></div>
 			<div class="shadedBox"><h2>2</h2></div>
@@ -39,21 +40,99 @@
 			<div class="shadedBox"><h2>13</h2></div>
 			<div class="shadedBox"><h2>14</h2></div>
 			<div class="shadedBox"><h2>15</h2></div>
-			<div class="shadedBox"><h2>16</h2></div>
-			<div class="shadedBox"><h2>17</h2></div>
-			<div class="shadedBox"><h2>18</h2></div>
-			<div class="shadedBox"><h2>19</h2></div>
-			<div class="shadedBox"><h2>20</h2></div>
 		</div>
-		<div class="bumper"></div>
-		<div id="trigger"></div>
-		<form class="preload">
+		<div class="boxContainer">
+			<div class="shadedBox"><h2>1</h2></div>
+			<div class="shadedBox"><h2>2</h2></div>
+			<div class="shadedBox"><h2>3</h2></div>
+			<div class="shadedBox"><h2>4</h2></div>
+			<div class="shadedBox"><h2>5</h2></div>
+			<div class="shadedBox"><h2>6</h2></div>
+			<div class="shadedBox"><h2>7</h2></div>
+			<div class="shadedBox"><h2>8</h2></div>
+			<div class="shadedBox"><h2>9</h2></div>
+			<div class="shadedBox"><h2>10</h2></div>
+			<div class="shadedBox"><h2>11</h2></div>
+			<div class="shadedBox"><h2>12</h2></div>
+			<div class="shadedBox"><h2>13</h2></div>
+			<div class="shadedBox"><h2>14</h2></div>
+			<div class="shadedBox"><h2>15</h2></div>
+		</div>
+		<div class="boxContainer">
+			<div class="shadedBox"><h2>1</h2></div>
+			<div class="shadedBox"><h2>2</h2></div>
+			<div class="shadedBox"><h2>3</h2></div>
+			<div class="shadedBox"><h2>4</h2></div>
+			<div class="shadedBox"><h2>5</h2></div>
+			<div class="shadedBox"><h2>6</h2></div>
+			<div class="shadedBox"><h2>7</h2></div>
+			<div class="shadedBox"><h2>8</h2></div>
+			<div class="shadedBox"><h2>9</h2></div>
+			<div class="shadedBox"><h2>10</h2></div>
+			<div class="shadedBox"><h2>11</h2></div>
+			<div class="shadedBox"><h2>12</h2></div>
+			<div class="shadedBox"><h2>13</h2></div>
+			<div class="shadedBox"><h2>14</h2></div>
+			<div class="shadedBox"><h2>15</h2></div>
+		</div>
+		<div class="boxContainer">
+			<div class="shadedBox"><h2>1</h2></div>
+			<div class="shadedBox"><h2>2</h2></div>
+			<div class="shadedBox"><h2>3</h2></div>
+			<div class="shadedBox"><h2>4</h2></div>
+			<div class="shadedBox"><h2>5</h2></div>
+			<div class="shadedBox"><h2>6</h2></div>
+			<div class="shadedBox"><h2>7</h2></div>
+			<div class="shadedBox"><h2>8</h2></div>
+			<div class="shadedBox"><h2>9</h2></div>
+			<div class="shadedBox"><h2>10</h2></div>
+			<div class="shadedBox"><h2>11</h2></div>
+			<div class="shadedBox"><h2>12</h2></div>
+			<div class="shadedBox"><h2>13</h2></div>
+			<div class="shadedBox"><h2>14</h2></div>
+			<div class="shadedBox"><h2>15</h2></div>
+		</div>
+		<div class="boxContainer">
+			<div class="shadedBox"><h2>1</h2></div>
+			<div class="shadedBox"><h2>2</h2></div>
+			<div class="shadedBox"><h2>3</h2></div>
+			<div class="shadedBox"><h2>4</h2></div>
+			<div class="shadedBox"><h2>5</h2></div>
+			<div class="shadedBox"><h2>6</h2></div>
+			<div class="shadedBox"><h2>7</h2></div>
+			<div class="shadedBox"><h2>8</h2></div>
+			<div class="shadedBox"><h2>9</h2></div>
+			<div class="shadedBox"><h2>10</h2></div>
+			<div class="shadedBox"><h2>11</h2></div>
+			<div class="shadedBox"><h2>12</h2></div>
+			<div class="shadedBox"><h2>13</h2></div>
+			<div class="shadedBox"><h2>14</h2></div>
+			<div class="shadedBox"><h2>15</h2></div>
+		</div>
+		<div id="topNavbar">
+			<div class="navButton">
+				<a class="animatedLink" href="#"><span id="words">Home</span><span id="arrow"> ></span></a>
+			</div>
+			<div class="navButton">
+				<a class="animatedLink" href="#"><span id="words">News Feeds</span><span id="arrow"> ></span></a>
+			</div>
+			<div class="navButton">
+				<a class="animatedLink" href="#"><span id="words">Boot Camp</span><span id="arrow"> ></span></a>
+			</div>
+			<div class="navButton">
+				<a class="animatedLink" href="#"><span id="words">About Us</span><span id="arrow"> ></span></a>	
+			</div>
+		</div>
+		<form class="preload" method="get" action="http://www.google.com/search" target="_blank">
+			<div id="trigger"></div>
 			<div class="eyeglassContainer">
 				<span></span>
 				<span></span>
 				<span></span>
-				<input type="text" placeholder="This is Flippin' KEWL!">
+				<input id="text" type="text" placeholder="This is Flippin' KEWL!" name="q" value="">
+				<input id="submit" name="submit" type="submit" value="Google Search" style="visibility:hidden;" />
 			</div>			
 		</form>
+		<script type="text/javascript" src="https%3A%2F%2Fcse.google.com%2Fcse/tools/onthefly?form=searchbox_demo&lang="></script>
 	</body>
-</html>           
+</html>
