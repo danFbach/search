@@ -274,8 +274,6 @@ a.animatedLink:hover::before{
 	width: calc(100% + 50px);
 	transform: rotate(0deg);
 }
-
-
 /*SHADED BOXES*/
 
 .slick-prev{
@@ -314,14 +312,22 @@ a.animatedLink:hover::before{
 	background: none;
 	top: 200px;
 	left: 10%;
+	overflow: hidden;
 }
 #boxContainer .shadedBox{
 	width: 150px;
-	height: 150px;
+	height: 146px;
 	float: left;
 	background: #0080ff;
 	text-align: center;
 }
+
+/* #1 base color #ed5912 */
+/* #2 base color #ffcf5e */
+/* #3 base color #9ea63f */
+/* #4 base color #598649 */
+/* #5 base color #3e674b */
+
 #boxContainer .shadedBox:nth-child(10n+15),
 #boxContainer .shadedBox:nth-child(10n+7){
 	background: #3399ff;
@@ -341,7 +347,6 @@ a.animatedLink:hover::before{
 #boxContainer .shadedBox:nth-child(10n+11){
 	background: #ffffff;
 }
-
 
 .preload * {
   -webkit-transition: none !important;
