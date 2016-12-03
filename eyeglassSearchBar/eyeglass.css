@@ -304,8 +304,6 @@ a.animatedLink:hover::before{
 	width: calc(100% + 50px);
 	transform: rotate(0deg);
 }
-
-
 /*SHADED BOXES*/
 .slick-arrow{
 	position: absolute;
@@ -365,12 +363,12 @@ a.animatedLink:hover::before{
 	border:3px solid #000;
 	background: #000;
 	top: 200px;
-	left: 25%;
-	clear: both;
+	left: 10%;
+	overflow: hidden;
 }
 .boxContainer .shadedBox{
 	width: 150px;
-	height: 175px;
+	height: 146px;
 	float: left;
 	text-align: center;
 	opacity: 0.9;
@@ -415,13 +413,6 @@ a.animatedLink:hover::before{
 .boxContainer:nth-of-type(2) .shadedBox:nth-child(10n+7),
 .boxContainer:nth-of-type(2) .shadedBox:nth-child(10n+3){
 	background: #f9b006;
-}
-.boxContainer:nth-of-type(2) .shadedBox:nth-child(10n+6),
-.boxContainer:nth-of-type(2) .shadedBox:nth-child(10n+4){
-	background: #f9b81f;
-}
-.boxContainer:nth-of-type(2) .shadedBox:nth-child(10n+5){
-	background: #fac038;
 }
 .boxContainer:nth-of-type(3) .shadedBox{
 	background: #798303;
@@ -499,7 +490,6 @@ a.animatedLink:hover::before{
 		clear: both;
 	}
 }
-
 
 .preload * {
   -webkit-transition: none !important;
